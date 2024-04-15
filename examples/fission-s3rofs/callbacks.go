@@ -220,11 +220,6 @@ func (dummy *globalsStruct) DoOpen(inHeader *fission.InHeader, openIn *fission.O
 	return
 }
 
-/*
-	cacheLineTag.inodeNumber = fileInode.inodeNumber
-	cacheLineTag.lineNumber = fileOffsetCurrent / globals.config.CacheLineSize
-*/
-
 func (fileInode *inodeStruct) fetchCacheLine(lineNumber uint64) (objectCacheLine []byte, err error) {
 	var (
 		getObjectInput   *s3.GetObjectInput
